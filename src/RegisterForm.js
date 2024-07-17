@@ -59,13 +59,36 @@ const RegisterForm = ({ onLogin }) => {
       return Object.keys(newErrors).length === 0;
     };
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
   
       if (validateForm()) {
+        //console.log(formData);
         setIsRegistered(true);
+
+        // try {
+        //   const response = await fetch('/api/register', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(formData),
+        //   });
+    
+        //   if (response.ok) {
+        //     setSuccess(true);
+        //   } else {
+        //     const errorData = await response.json();
+        //     setError(errorData.message || 'Registration failed');
+        //   }
+        // } catch (error) {
+        //   setError('An error occurred. Please try again later.');
+        // }
+      };
+    
+
       }
-    };
+
 
   const handleCloseModal = () => {
     setIsRegistered(false);
@@ -81,6 +104,17 @@ const RegisterForm = ({ onLogin }) => {
     e.preventDefault();
     setShowConfirmPassword(!showConfirmPassword);
   };
+
+
+  // if (success) {
+  //   return (
+  //     <Modal
+  //         show={isRegistered}
+  //         message="Registration successful!"
+  //         onClose={handleCloseModal}
+  //       />
+  //   );
+  // }
 
   return (
     <>

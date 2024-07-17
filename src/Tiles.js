@@ -2,24 +2,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import Background from './images/bg.png';
-//import { useHistory } from 'react-router-dom'; // Import useHistory hook from react-router-dom
+import { useNavigate } from 'react-router-dom'; // Import useHistory hook from react-router-dom
 
 const Tiles = () => {
-  //const history = useHistory(); // Initialize useHistory
+  const history = useNavigate(); // Initialize useHistory
 
   const handleTileClick = (tile) => {
-    if (tile === 'attendance') {
-      //history.push('/attendance'); // Navigate to the Attendance component
+    if (tile === 'user-details') {
+      history('/user-details'); // Navigate to the Attendance component
     }
   };
 
   return (
     <TilesContainer>
       <Tile>
-        <TileLabel onClick={() => handleTileClick('attendance')}>Attendance</TileLabel>
-      </Tile>
-      <Tile>
-        <TileLabel>User Details</TileLabel>
+        <TileLabel onClick={() => handleTileClick('user-details')}>User Details</TileLabel>
       </Tile>
       <Tile>
         <TileLabel>User Tasks</TileLabel>

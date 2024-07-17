@@ -1,7 +1,7 @@
 .attendance-container {
     padding: 20px;
     background: #fff;
-    margin: 20px auto;
+    margin: 100px auto 20px;
     width: 80%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -21,5 +21,68 @@
   
   .attendance-table th {
     background-color: #f4f4f4;
+  }
+
+  .backButton{
+    position: relative;
+    top: 100px;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    left: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+  }
+
+  select {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: auto;
+    text-align: center;
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .day-box {
+    padding: 10px;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
   }
   
