@@ -31,7 +31,7 @@ const Overlay = styled.div`
 
 const ModalContainer = styled.div`
   background: #fff;
-  padding: 20px;
+  padding: 50px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;

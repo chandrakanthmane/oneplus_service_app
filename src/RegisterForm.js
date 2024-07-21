@@ -14,6 +14,7 @@ const RegisterForm = ({ onLogin }) => {
   const [isRegistered, setIsRegistered] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState('');
 
 
     const handleChange = (e) => {
@@ -63,7 +64,7 @@ const RegisterForm = ({ onLogin }) => {
       e.preventDefault();
   
       if (validateForm()) {
-        //console.log(formData);
+
         setIsRegistered(true);
 
         // try {
@@ -76,7 +77,7 @@ const RegisterForm = ({ onLogin }) => {
         //   });
     
         //   if (response.ok) {
-        //     setSuccess(true);
+        //     setIsRegistered(true);
         //   } else {
         //     const errorData = await response.json();
         //     setError(errorData.message || 'Registration failed');
@@ -104,17 +105,6 @@ const RegisterForm = ({ onLogin }) => {
     e.preventDefault();
     setShowConfirmPassword(!showConfirmPassword);
   };
-
-
-  // if (success) {
-  //   return (
-  //     <Modal
-  //         show={isRegistered}
-  //         message="Registration successful!"
-  //         onClose={handleCloseModal}
-  //       />
-  //   );
-  // }
 
   return (
     <>
@@ -199,35 +189,12 @@ const RegisterForm = ({ onLogin }) => {
               </PasswordWrapper>
               {errors.confirmPassword && <Error>{errors.confirmPassword}</Error>}
             </FormGroup>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
             <Button type="submit" onClick={handleSubmit}>Register</Button>
           </form>
         </FormContainer>
       )}
     </>
-
-  //   <FormContainer>
-  //   <h2>Register</h2>
-  //   <form>
-  //     <FormGroup>
-  //       <label>Username:</label>
-  //       <input type="text" required />
-  //     </FormGroup>
-  //     <FormGroup>
-  //       <label>Email:</label>
-  //       <input type="email" required />
-  //     </FormGroup>
-  //     <FormGroup>
-  //       <label>Password:</label>
-  //       <input type="password" required />
-  //     </FormGroup>
-  //     <Button type="submit" onClick={handleRegister}>Register</Button>
-  //   </form>
-  //   <Modal
-  //       show={showModal}
-  //       message="Registration successful!"
-  //       onClose={handleCloseModal}
-  //     />
-  // </FormContainer>
   );
 };
 
